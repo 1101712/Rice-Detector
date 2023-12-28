@@ -2,9 +2,44 @@ core.Microsoft*
 core.mongo*
 core.python*
 env.py
+myenv/
 __pycache__/
 *.py[cod]
 node_modules/
 .github/
 cloudinary_python.txt
 kaggle.json
+.env
+inputs/
+outputs/
+# Virtual environment
+venv/
+env/
+lib/
+bin/
+Pipfile.lock
+poetry.lock
+# Compiled Python files
+*.pyc
+*.py
+*.pyd
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+# TensorFlow specific
+*.so*
+# IDEs and editors
+.vscode/
+.idea/
+*.sublime-*
+# Operating System
+.DS_Store
+Thumbs.db
+.directory
+# Build directories
+build/
+dist/
+*.egg-info/
+# Logs and temporary files
+*.log
+*.tmp
+tensorflow/libtensorflow_cc.so.2
