@@ -21,7 +21,7 @@ Pipfile.lock
 poetry.lock
 # Compiled Python files
 *.pyc
-*.py
+#*.py
 *.pyd
 # Jupyter Notebook checkpoints
 .ipynb_checkpoints/
