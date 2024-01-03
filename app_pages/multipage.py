@@ -13,7 +13,11 @@ class MultiPage:
         self.pages.append({"title": title, "function": func})
 
     def run(self):
-        st.sidebar.title("Settings")
+        st.sidebar.markdown("""
+            <h1 style='text-align: center; color: blue; font-size: 34px; font-weight: bold; font-family: Arial, sans-serif;'>Rice Varieties Detector</h1>
+            """, unsafe_allow_html=True)
+
+        st.sidebar.markdown("## Settings")
         view_mode = st.sidebar.radio("View Mode", ["Standard", "Quick Access"])
 
         if view_mode == "Standard":

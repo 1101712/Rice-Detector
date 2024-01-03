@@ -7,7 +7,7 @@ def page_summary():
     st.title("Project Summary")
 
     st.info(f"""
-    **General Information**
+    ### **General Information**
 
     Rice, which is among the most widely produced grain products worldwide, has many genetic varieties. These varieties are separated from each other due to some of their features. These are usually features such as texture, shape, and color. With these features that distinguish rice varieties, it is possible to classify and evaluate the quality of seeds. In this study, Arborio, Basmati, Ipsala, Jasmine, and Karacadag, which are five different varieties of rice often grown in Turkey, were used.  
     
@@ -17,7 +17,7 @@ def page_summary():
     
     Therefore, the development of an application that can classify rice varieties accurately is not only a technological achievement but also a tool that serves multiple practical purposes. It aids culinary professionals in selecting the right rice type for their dishes, assists farmers and agribusinesses in proper crop management, and helps consumers make informed choices about their food, aligning with their culinary preferences and health requirements.  
 
-    **Project Dataset**  
+    ### **Project Dataset**  
 
     A total of 75,000 grain images, 15,000 from each of these varieties, are included in the dataset.
         """)
@@ -28,8 +28,7 @@ def page_summary():
         """)
 
     st.info(f"""
-    **General Information**
-
+    ### **Business requirements**
     The project has 2 business requirements:  
 
     - The client is interested in conducting a study to visually differentiate five rice varieties: Arborio, Basmati, Ipsala, Jasmine, and Karacadag.  
