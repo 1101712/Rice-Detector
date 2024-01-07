@@ -12,6 +12,8 @@ kaggle.json
 .env
 inputs/
 outputs/
+inputs_v3/
+outputs_v3/
 # Virtual environment
 venv/
 env/
