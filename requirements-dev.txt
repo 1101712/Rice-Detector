@@ -1,0 +1,7 @@
+matplotlib
+seaborn
+plotly
+kaleido>=0.2.1
+nbformat
+numpy
+keras
