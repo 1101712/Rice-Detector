@@ -19,7 +19,8 @@ def page_summary():
 
     ### **Project Dataset**  
 
-    A total of 75,000 grain images, 15,000 from each of these varieties, are included in the dataset.
+    This dataset is a combination of two parts. The first part includes images of the specified rice varieties, and the second part comprises various miscellaneous images. The inclusion of 30,000 images, 5,000 from each class of rice grain and non-rice images, ensures a comprehensive dataset. All images have been uniformly processed and resized, then divided into three subsets for training, validation, and testing the model. The second dataset is crucial for training the model to recognize and differentiate not only between varieties of rice but also to identify and correctly handle images of non-rice subjects. This is essential to ensure that if an image of a different rice variety or an unrelated image is mistakenly uploaded by a user, the model can still accurately classify or flag it as non-rice.
+
         """)
 
     # Link to README file, so the users can have access to full project documentation
@@ -29,12 +30,32 @@ def page_summary():
 
     st.info(f"""
     ### **Business requirements**
-    The project has 2 business requirements:  
+    The project has 5 business requirements:  
 
-    - The client is interested in conducting a study to visually differentiate five rice varieties: Arborio, Basmati, Ipsala, Jasmine, and Karacadag.  
+    **Business Requirement 1: Visual Analysis of Rice Varieties**
 
-    - The client seeks to determine the specific variety of rice depicted in the uploaded images.  
+    - Analyzing average and variability images for each rice variety to identify distinct features.
+    - Investigating differences between the varieties through comparative studies.
+    - Creating image montages to showcase the diversity within each variety, enhancing visual understanding.
+    
+    **Business Requirement 2: Machine Learning Model Development and Performance Metrics**
 
-    - Download a prediction report of the examined rice image.
+    - Developing a Neural Network-based ML system for precise classification, tailored to accurately identify each of the five rice varieties.
+    - Addressing file size limitations for GitHub and deployment platforms, ensuring smooth operation and accessibility.
+    - Setting performance goals, such as achieving an accuracy of over 95%, to meet the client's high standards for precision.
+    - Implementing regular performance evaluations to maintain and improve the model's accuracy and efficiency over time.
+    
+    **Business Requirement 3: Reporting**
+
+    - Generating detailed prediction reports for each analyzed rice image, providing insights into the classification results. These reports are crucial for quality control and product categorization, enhancing the client's decision-making process.
+    
+    **Business Requirement 4: Scalability and Adaptability**
+
+    - Ensuring the model's scalability to handle large datasets efficiently without compromising performance.
+    - Adapting the model for potential application to other grain types or similar classification tasks, increasing its utility.
+    
+    **Business Requirement 5: A user-friendly interface that allows for easy uploading of rice images and retrieval of prediction reports**
+
+    - Create the Rice Varieties Detector with image upload and prediction report download capabilities.
         """)
 

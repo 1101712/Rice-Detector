@@ -35,16 +35,25 @@ def create_download_link(filename):
     return href
 
 # Main function to display the rice detector
-def rice_detector():
+def rice_detector(version='v3'):
     st.title("Rice Varieties Detector")
+    
     st.markdown("""
         Upload images of individual rice grains here to identify their varieties. The model recognizes five types of rice: Arborio, Basmati, Ipsala, Jasmine, and Karacadag.
         """)
     
+    st.markdown("""
+        Please upload a clear image of an individual rice grain. 
+        The grain should be centered and occupy a significant portion of the image, 
+        similar to the reference image provided below.
+        """)
+    
+    st.image(f'outputs_{version}/performance/Rice_example.jpg')  # path to reference image
+    
     st.warning("You can upload no more than 4 images at a time.")
 
     # Load the trained model
-    model_path = 'outputs/v2/final_model/final_rice_model.keras'
+    model_path = f'outputs_{version}/final_model/final_rice_model_2.keras'
     model = load_model(model_path)
 
     # Limit the number of uploaded files
@@ -71,14 +80,19 @@ def rice_detector():
                 predictions = model.predict(processed_image)
 
                 # Identify the class with the highest probability
-                classes = ["Arborio", "Basmati", "Ipsala", "Jasmine", "Karacadag"]
+                classes = ["Arborio", "Basmati", "Ipsala", "Jasmine", "Karacadag", "Non-Rice"]
                 predicted_class = np.argmax(predictions, axis=1)[0]
                 probability = np.max(predictions) * 100
 
                 # Display prediction and save it
-                st.write(f"Prediction: {classes[predicted_class]} with probability {probability:.2f}%")
-                all_predictions.append([uploaded_file.name, classes[predicted_class], f'{probability:.2f}%'])
-                st.write("---")
+                # If the image is not recognized as a target rice variety,
+                # indicate in the CSV that it's not one of the desired types, and mark the probability as "N/A"
+                if classes[predicted_class] == "Non-Rice":
+                    st.error("The uploaded image is not recognized as one of the target rice varieties: Arborio, Basmati, Ipsala, Jasmine, or Karacadag. Please ensure the image is clear and the grain is properly focused.")
+                    all_predictions.append([uploaded_file.name, "Not a target rice variety", "N/A"])  # Add a different message for non-rice images
+                else:
+                    st.write(f"Prediction: {classes[predicted_class]} with probability {probability:.2f}%")
+                    all_predictions.append([uploaded_file.name, classes[predicted_class], f'{probability:.2f}%'])  # Keep this for rice images
 
         # Save predictions and create a download link
         if all_predictions:
@@ -87,7 +101,7 @@ def rice_detector():
             st.markdown(create_download_link(predictions_filename), unsafe_allow_html=True)
 
 # Function to preprocess images for the model
-def preprocess_image(image, target_size=(224, 224)):
+def preprocess_image(image, target_size=(128, 128)):
     """
     Preprocess the image for the model.
     :param image: Image to preprocess

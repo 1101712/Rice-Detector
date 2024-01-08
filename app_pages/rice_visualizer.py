@@ -4,27 +4,25 @@ import matplotlib.pyplot as plt
 from matplotlib.image import imread
 from PIL import Image
 
-def rice_visualizer():
+def rice_visualizer(version='v3'):
     st.title("Rice Varieties Visualizer")
     st.markdown(f"""
-        Welcome to the Rice Varieties Visualizer, a key component of our dashboard that highlights the distinctive visual characteristics of different rice varieties. This interactive section is dedicated to showcasing the unique attributes of five specific rice types: Arborio, Basmati, Ipsala, Jasmine, and Karacadag.
+        Welcome to the Rice Varieties Visualizer, a key component of our dashboard that highlights the distinctive visual characteristics of different rice varieties and non-rice images. This interactive section is dedicated to showcasing the unique attributes of five specific rice types: Arborio, Basmati, Ipsala, Jasmine, Karacadag and non-rice images.
         
         This visual information forms the foundation upon which our machine learning model is trained to classify the rice grains accurately.
         """)
 
-    version = 'v2'
-
-    rice_varieties = ["Arborio", "Basmati", "Ipsala", "Jasmine", "Karacadag"]
+    rice_varieties = ["Arborio", "Basmati", "Ipsala", "Jasmine", "Karacadag", "Non-Rice"]
 
     # Title and expander for the 'Average and Variability' section
     st.markdown("### Difference between average and variability image")
     st.info(f"""
-        In this part of the visualizer, you can explore the average appearance and variability of each rice variety. By selecting the checkboxes, you will see images that represent the average color, shape, and texture of each rice type, along with their variability within the dataset. These images are crucial for understanding the subtle yet important differences between each variety, providing a visual basis for the machine learning model's classification decisions.
+        In this part of the visualizer, you can explore the average appearance and variability of each rice variety and non-rice images. By selecting the checkboxes, you will see images that represent the average color, shape, and texture of each rice type, along with their variability within the dataset. These images are crucial for understanding the subtle yet important differences between each variety and non-rice, providing a visual basis for the machine learning model's classification decisions.
         """)
     with st.expander("Click here to expand"):
         for variety in rice_varieties:
             if st.checkbox(f"Show {variety} Average and Variability", key=f"avg_var_{variety}"):
-                avg_img_path = f"outputs/{version}/average_images/{variety}_average_variability.png"
+                avg_img_path = f"outputs_{version}/average_images_2/{variety}_average_variability_2.png"
                 if os.path.exists(avg_img_path):
                     avg_image = Image.open(avg_img_path)
                     st.image(avg_image, caption=f'{variety} - Average and Variability')
@@ -35,12 +33,12 @@ def rice_visualizer():
     # Title and expander for the 'Image Montage' section
     st.markdown("### Image Montage")
     st.info(f"""
-        The montage section offers a closer look at each rice variety through a collection of individual grain images. This visual montage allows you to observe the natural variation within each type of rice, showcasing the diversity in size, shape, and color. It's an effective way to visually compare and contrast the rice varieties at a glance.
+        The montage section offers a closer look at each rice variety through a collection of individual grain images. This visual montage allows you to observe the natural variation within each type of rice and non-rice images, showcasing the diversity in size, shape, and color. It's an effective way to visually compare and contrast the rice varieties and non-rice images at a glance.
         """)
     with st.expander("Click here to expand"):
         for variety in rice_varieties:
             if st.checkbox(f"Show Montage for {variety}", key=f"montage_{variety}"):
-                montage_img_path = f"outputs/{version}/montage/montage_{variety}.png"
+                montage_img_path = f"outputs_{version}/montage/montage_{variety}.png"
                 if os.path.exists(montage_img_path):
                     montage_image = Image.open(montage_img_path)
                     st.image(montage_image, caption=f'{variety} Montage')
