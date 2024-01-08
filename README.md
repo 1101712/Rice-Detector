@@ -85,7 +85,10 @@ Used to increase the diversity of the training dataset. Parameters such as rotat
 Used for feeding data into the model during training. The validation dataset is not augmented, allowing a more accurate assessment of model performance on unmodified images.
 
 - Batch Size:  
-The choice of batch size affects the speed and stability of training. A smaller batch size can lead to more stable but slower convergence.
+The choice of batch size affects the speed and stability of training. A smaller batch size can lead to more stable but slower convergence.  
+
+- Step-by-step Prinziple:
+The model is created to train step-by-step, one epoch at a time. This approach allows for saving the training history after each epoch. The saved history files named 'history_epoch_{epoch:02d}.csv' provide detailed insights into the model's performance across epochs, enabling a more thorough analysis to determine the most effective model.
 
 ### Early Stopping and Checkpointing
 
