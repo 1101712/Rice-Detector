@@ -33,7 +33,72 @@ Hypothesis: With a sufficiently large dataset, the use of deep learning and care
 
 - How to Validate: This hypothesis will be validated by assembling a large dataset of images representing the five rice varieties. The dataset will undergo preprocessing to ensure optimal quality and uniformity. A deep learning model, specifically a Convolutional Neural Network (CNN), will then be trained on this dataset. The model's performance will be evaluated based on its accuracy in correctly classifying the images into the respective rice varieties. The goal is to achieve an accuracy rate of over 95%, demonstrating the effectiveness of deep learning in handling complex image classification tasks.
 
+## Rationale for the model
 
+This model is composed of 1 input layer, 3 convolutional layers (hidden layers), 1 fully connected hidden layer, and 1 output layer.
+
+### Goal
+The model's architecture, hyperparameters, and optimizer were chosen through experimentation and iterative refinement. This specific configuration, while not the only possible solution, was selected for its effective balance between accuracy and computational efficiency.
+
+A well-designed model should generalize from training data to make accurate predictions on unseen data, avoiding overfitting. It should also be computationally efficient, minimizing the neural network's complexity without sacrificing performance.
+
+### Model Architecture and Hyperparameters  
+
+- Convolutional Layers (Hidden Layers):  
+The model uses three 2D convolutional layers, appropriate for processing the 2D structure of the image data. These layers help in feature extraction by focusing on small segments of the input image.
+
+- Kernel Size:  
+A 3x3 convolutional kernel is chosen for its ability to capture essential features without overly narrowing the focus, thus maintaining a balance between detail and broader feature recognition.
+
+- Number of Neurons:  
+The neurons in each layer are set as powers of 2, optimizing computational efficiency and benefiting from GPU optimizations.
+
+- Activation Function:  
+The ReLU function is selected for its effectiveness in deep learning models. It helps to avoid the vanishing gradient problem and speeds up the training process.
+
+- Pooling:  
+MaxPooling is utilized to reduce the spatial dimensions of the output volume, thus reducing the number of parameters and computational load. This step is crucial for managing model complexity.
+
+- Fully Connected Layer (Hidden Layer):  
+This layer helps in making final classifications based on the features extracted by convolutional layers.
+
+- Dropout Layer:  
+Included to prevent overfitting by randomly setting a fraction of input units to zero during training.
+
+### Model Compilation  
+
+- Loss Function:  
+Categorical cross-entropy is employed for this multi-class classification task.
+
+- Optimizer:  
+Adam optimizer is chosen for efficient handling of sparse gradients and adaptive learning rate adjustments.
+
+- Metrics:  
+Model performance is primarily assessed using accuracy as the metric.
+
+### Training Process
+
+- Data Augmentation:  
+Used to increase the diversity of the training dataset. Parameters such as rotation, shifts, and mirroring help the model to learn from a wider range of image variations, which contributes to better generalization.
+
+- Training and Validation Data Generators:  
+Used for feeding data into the model during training. The validation dataset is not augmented, allowing a more accurate assessment of model performance on unmodified images.
+
+- Batch Size:  
+The choice of batch size affects the speed and stability of training. A smaller batch size can lead to more stable but slower convergence.
+
+### Early Stopping and Checkpointing
+
+- Early Stopping:  
+Used to prevent overfitting. Training is halted if accuracy on the validation dataset does not improve for a set number of epochs. This helps to preserve the model at the point where it achieves an optimal balance between learning and generalization.
+
+- Model Checkpointing:  
+Allows saving the model after each epoch. This offers the possibility to restore the model at any stage of training and analyze its performance at different times.
+
+### Iterative Training Approach
+
+- Step-by-Step Training:  
+The model is trained epoch by epoch, which allows for detailed tracking of progress and making adjustments during the training process.
 
 ## The rationale to map the business requirements to the Data Visualizations and ML tasks
 The five main business requirements were split in several user stories which were translated in Machine Learning Tasks.  For a more detailed exploration of the user stories and their associated tasks and acceptance criteria see [GitHub project](https://github.com/users/1101712/projects/8/views/1). 
