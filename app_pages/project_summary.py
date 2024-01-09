@@ -25,7 +25,7 @@ def page_summary():
 
     # Link to README file, so the users can have access to full project documentation
     st.write(f"""
-    For additional information, please visit and **read** the [Project README file](https://github.com/1101712/Rice-Detector/).
+    For additional information, please read the [Project README file](https://github.com/1101712/Rice-Detector/).
         """)
 
     st.info(f"""

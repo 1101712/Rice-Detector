@@ -67,13 +67,15 @@ def rice_detector(version='v3'):
     all_predictions = []
 
     if uploaded_files and len(uploaded_files) > max_files:
-        st.warning(f"Please upload no more than {max_files} images.")
+        # Use st.error to display the message with a red background
+        st.error(f"You have uploaded {len(uploaded_files)} images. Please upload no more than {max_files} images. Delete excess images by clicking the 'x' icon next to them.")
     else:
-        for uploaded_file in uploaded_files:
+        for uploaded_file in reversed(uploaded_files): # Iterate in reverse order
             if uploaded_file is not None:
                 # Open the image
                 image = Image.open(uploaded_file)
-                st.image(image, caption='Uploaded Image', use_column_width=True)
+                # Reducing image size
+                st.image(image, caption='Uploaded Image', width=250) 
 
                 # Preprocess and classify the image
                 processed_image = preprocess_image(image)

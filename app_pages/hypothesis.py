@@ -17,7 +17,7 @@ def hypothesis(version='v3'):
         "The analysis involved examining images of rice varieties and non-rice objects to identify unique characteristics. "
         "The varieties and non-rice objects have distinctive features such as shape, size, and texture."
     )
-    st.write("To explore these differences, visit the Rice Varieties Visualizer tab.")
+    st.write("To explore these differences, visit the Rice Varieties Visualizer tab in the sidebar.")
 
     st.warning(
         "The model was trained not only to recognize the distinct features of each rice variety but also to accurately identify non-rice objects. "

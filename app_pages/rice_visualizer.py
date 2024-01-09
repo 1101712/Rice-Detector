@@ -47,7 +47,7 @@ def rice_visualizer(version='v3'):
                     st.error(f"File not found: {montage_img_path}")
                     
     st.write("""
-    For additional information, please visit and **read** the [Project README file](https://github.com/1101712/Rice-Detector/).
+    For additional information, please read the [Project README file](https://github.com/1101712/Rice-Detector/).
         """)
 
 # Call the function to display the visualizer

@@ -109,7 +109,7 @@ All the tasks were manually tested and function as expected.
 
 
 ## ML Business Case
-For a comprehensive overview and detailed insights,plwase explore our Project Handbook on the  [Wiki](https://github.com/1101712/Rice-Detector/wiki/Rice-Varieties-Detector-Handbook).
+For a comprehensive overview and detailed insights,please explore our Project Handbook on the  [Wiki](https://github.com/1101712/Rice-Detector/wiki/Rice-Varieties-Detector-Handbook).
 
 ### Rice Varieties Classifier  
 Our goal is to develop an ML model that accurately classifies rice grains into one of five varieties – Arborio, Basmati, Ipsala, Jasmine, and Karacadag – based on an extensive image dataset. This project is a classic case of supervised learning, framed as a multi-class, single-label classification challenge.
@@ -132,8 +132,8 @@ The training data for the model are sourced from a curated dataset of rice grain
 1. **Navigation (Sidebar Navigation)**:
 
 - Menu Title: Displayed as a header in the sidebar, for example, "Rice Varieties Detector".  
-- Settings: Includes a "View Mode" option with two choices - "Standard" and "Quick Access".  
-    - Standard Mode: Allows the user to view all available pages.  
+- Settings: Includes a "View Mode" option with two choices - "Expert" and "Quick Access".  
+    - Expert Mode: Allows the user to view all available pages.  
     - Quick Access Mode: Displays only key pages such as "Rice Varieties Detector" and "Project Summary".  
 
 2. **Page Selection**:  
@@ -148,7 +148,7 @@ The training data for the model are sourced from a curated dataset of rice grain
 
 - General Information: Provides an overview of the project, including the significance of differentiating rice varieties and their culinary, agricultural, and economic importance.  
 - Project Dataset: Details the dataset used, including the total number of images and distribution among the five rice varieties.
-Business Requirements: Outlines the key business requunderstanding algorithms and data structures.  
+- Business Requirements: Outlines the key business requunderstanding algorithms and data structures.  
 
 2. **Rice Varieties Visualizer Page**:
 
@@ -157,7 +157,7 @@ Business Requirements: Outlines the key business requunderstanding algorithms an
 - Image Montage: Another interactive section with checkboxes to display a montage of images for each rice variety.  
 - Additional Information: Link to the Project README file.  
 
-3. **Rice Varieties Detector Page**:**   
+3. **Rice Varieties Detector Page**:   
 
 The Rice Varieties Detector page has following functionalities for a more robust user experiences:
 
