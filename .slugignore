@@ -1,0 +1,8 @@
+jupiter_notebooks/
+jupiter_notebooks_v3/
+staticfiles/
+.gitpod.dockerfile
+.gitpod.yml
+aoo_pages/_pycache_/
+README.md
+requirements-dev.txt
