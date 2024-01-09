@@ -56,6 +56,9 @@ def rice_detector(version='v3'):
     model_path = f'outputs_{version}/final_model/final_rice_model_2.keras'
     model = load_model(model_path)
 
+    # Set the probability threshold to 85%
+    probability_threshold = 85  
+
     # Limit the number of uploaded files
     max_files = 4
     uploaded_files = st.file_uploader("Choose an image...", accept_multiple_files=True, type=["jpg", "jpeg"])
@@ -86,16 +89,18 @@ def rice_detector(version='v3'):
                 predicted_class = np.argmax(predictions, axis=1)[0]
                 probability = np.max(predictions) * 100
 
-                # Display prediction and save it
-                # If the image is not recognized as a target rice variety,
-                # indicate in the CSV that it's not one of the desired types, and mark the probability as "N/A"
-                if classes[predicted_class] == "Non-Rice":
+                # Handling cases with low prediction confidence
+                if probability < probability_threshold:
+                    st.error("The model's confidence is low. The uploaded image may not be one of the target rice varieties or the image quality is not clear.")
+                    all_predictions.append([uploaded_file.name, "Non-Rice or Unclear", "N/A"])
+                elif classes[predicted_class] == "Non-Rice":
+                    # If the image is recognized as non-rice by the model
                     st.error("The uploaded image is not recognized as one of the target rice varieties: Arborio, Basmati, Ipsala, Jasmine, or Karacadag. Please ensure the image is clear and the grain is properly focused.")
-                    all_predictions.append([uploaded_file.name, "Not a target rice variety", "N/A"])  # Add a different message for non-rice images
+                    all_predictions.append([uploaded_file.name, "Non-Rice or Unclear", "N/A"])
                 else:
+                    # For high-confidence predictions
                     st.write(f"Prediction: {classes[predicted_class]} with probability {probability:.2f}%")
-                    all_predictions.append([uploaded_file.name, classes[predicted_class], f'{probability:.2f}%'])  # Keep this for rice images
-
+                    all_predictions.append([uploaded_file.name, classes[predicted_class], f'{probability:.2f}%'])
         # Save predictions and create a download link
         if all_predictions:
             predictions_filename = 'predictions.csv'

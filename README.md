@@ -1,7 +1,29 @@
-![Logo](staticfiles/images_readme/logo.jpg)
+![Logo](staticfiles/images_readme/design.jpg)  
+
+[Link to live project](https://rice-varieties-detector-b3b52f0488ad.herokuapp.com/)
+
+## Table of Contents
+1. [Dataset Content](#dataset-content)
+2. [Business Requirements](#business-requirements)
+3. [Hypothesis and validation](#hypothesis-and-validation)
+4. [Rationale for the model](#rationale-for-the-model)
+5. [Trial and error](#trial-and-error)
+6. [Implementation of the Business Requirements (User Expierence)](#the-rationale-to-map-the-business-requirements-to-the-data-visualizations-and-ml-tasks)
+7. [ML Business case](#ml-business-case)
+8. [Dashboard design](#dashboard-design-streamlit-app-user-interface)
+9. [CRISP DM Process](#the-process-of-cross-industry-standard-process-for-data-mining)
+10. [Bugs](#bugs)
+11. [Testing](#testing)
+12. [Deployment](#deployment)
+13. [Development](#development)
+14. [Technologies used](#technologies-used)
+15. [Development History](##development-history-of-the-educational-project-developing-and-deploying-an-ai-system)
+16. [Aknowlegments](#acknowledgments)
+
 # Rice varieties detector
+
 ## Dataset Content
-* Describe your dataset. Choose a dataset of reasonable size to avoid exceeding the repository's maximum size and to have a shorter model training time. If you are doing an image recognition project, we suggest you consider using an image shape that is 100px × 100px or 50px × 50px, to ensure the model meets the performance requirement but is smaller than 100Mb for a smoother push to GitHub. A reasonably sized image set is ~5000 images, but you can choose ~10000 lines for numeric or textual data. 
+
 
 
 ## Business Requirements
@@ -101,12 +123,15 @@ Allows saving the model after each epoch. This offers the possibility to restore
 ### Iterative Training Approach
 
 - Step-by-Step Training:  
-The model is trained epoch by epoch, which allows for detailed tracking of progress and making adjustments during the training process.
+The model is trained epoch by epoch, which allows for detailed tracking of progress and making adjustments during the training process.  
 
-## The rationale to map the business requirements to the Data Visualizations and ML tasks
+## Trial and error  
+
+## The rationale to map the business requirements to the Data Visualizations and ML tasks  
+
 The five main business requirements were split in several user stories which were translated in Machine Learning Tasks.  For a more detailed exploration of the user stories and their associated tasks and acceptance criteria see [GitHub project](https://github.com/users/1101712/projects/8/views/1). 
-All the tasks were manually tested and function as expected.
 
+All the tasks were manually tested and function as expected. 
 
 ## ML Business Case
 For a comprehensive overview and detailed insights,please explore our Project Handbook on the  [Wiki](https://github.com/1101712/Rice-Detector/wiki/Rice-Varieties-Detector-Handbook).
@@ -211,10 +236,15 @@ The results are appended to an array that is later used to generate a downloadab
 - Additional Visualizations: Reference to the Project Hypothesis page for more detailed performance visualizations.
 - More Information: Link to the Project README file for comprehensive project details.
 
-## Fixed Bugs
+## CRISP DM Process
 
-## Unfixed Bugs
-* You will need to mention unfixed bugs and why they were not fixed. This section should include shortcomings of the frameworks or technologies used. Although time can be a significant variable to consider, paucity of time and difficulty understanding implementation is not a valid reason to leave bugs unfixed.
+## Bugs
+
+### Fixed Bugs
+
+### Unfixed Bugs
+
+## Testing
 
 ## Deployment
 The project is coded and hosted on GitHub and deployed with [Heroku](https://www.heroku.com/). 
@@ -233,7 +263,7 @@ The steps needed to deploy this projects are as follows:
 8. Wait for the logs to run while the dependencies are installed and the app is being built.
 9. The mock terminal is then ready and accessible from a link similar to `https://your-projects-name.herokuapp.com/`
 10. If the slug size is too large then add large files not required for the app to the `.slugignore` file.
-   
+
 ## Development
 
 ### Fork
@@ -260,14 +290,17 @@ To clone this repository follow the below steps:
 - Select **Code** and click "Download Zip" file
 - Once download is completed, extract ZIP file and use in your local environment
 
-## Languages
+## Technologies used
+
+### Languages
 
 - [Python](https://www.python.org/)
 - [Markdown](https://en.wikipedia.org/wiki/Markdown)
 
 
-## Frameworks - Libraries - Programs Used
-### Python Libraries
+### Frameworks - Libraries - Programs Used  
+
+Python Libraries:
 
 - [os](https://docs.python.org/3/library/os.html) -used for interacting with the operating system.
 - [tensorflow-cpu](https://www.tensorflow.org) used for creating the model
@@ -288,7 +321,7 @@ To clone this repository follow the below steps:
 
 They all are specifically designed to be used with the Python programming language. Considered Python libraries are commonly installed and managed through Python's package management system, such as pip.  
 
-### External Libraries and Packages
+External Libraries and Packages:
 
 - non External Libraries and Packages are used
 
@@ -351,11 +384,11 @@ They all are specifically designed to be used with the Python programming langua
 
 - [Code Institute](https://codeinstitute.net/ie/), [Code Institute - Churnometer Project](https://github.com/Code-Institute-Solutions/churnometer), [Code Institute -WalkthroughProject01](https://github.com/Code-Institute-Solutions/WalkthroughProject01).  
 
-
+## Development History of the Educational Project 'Developing and Deploying an AI System'
 
 ## Acknowledgments
 - To Kay Welfare, for providing great psyhological support and motivation.
 - To Margarita Andrianova for helping to resolve the technical questions.
-- I would like to mentions Openais ChatGPT, which gave me a huge opportunity to study quickly and very efficiently.
+- I would like to mentions OpenAI's ChatGPT, which gave me a huge opportunity to study quickly and very efficiently.
 - To the Code Institute Slack community.irements for the project.  
 - Additional Information: Link to the Project README file for further details.  

@@ -1,5 +1,2 @@
 Image Name,Predicted Class,Probability
-erik-johansson-impossible-photography-1.jpg,Not a target rice variety,N/A
-basmati (10018).jpg,Basmati,100.00%
-Karacadag (10021).jpg,Karacadag,100.00%
-Jasmine (10021).jpg,Jasmine,99.98%
+for_test1.jpg,Non-Rice or Unclear,N/A
